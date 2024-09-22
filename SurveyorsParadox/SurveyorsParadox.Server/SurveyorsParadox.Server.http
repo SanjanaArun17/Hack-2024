@@ -1,0 +1,6 @@
+@SurveyorsParadox.Server_HostAddress = http://localhost:5130
+
+GET {{SurveyorsParadox.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

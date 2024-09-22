@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyorsParadox.Server", "SurveyorsParadox.Server\SurveyorsParadox.Server.csproj", "{AD8B26A2-E839-4748-97F0-B1C67FD8A72B}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "surveyorsparadox.client", "surveyorsparadox.client\surveyorsparadox.client.esproj", "{3097C748-587C-4A60-9068-7C8CD5F49FF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD8B26A2-E839-4748-97F0-B1C67FD8A72B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8B26A2-E839-4748-97F0-B1C67FD8A72B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8B26A2-E839-4748-97F0-B1C67FD8A72B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD8B26A2-E839-4748-97F0-B1C67FD8A72B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3097C748-587C-4A60-9068-7C8CD5F49FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3097C748-587C-4A60-9068-7C8CD5F49FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3097C748-587C-4A60-9068-7C8CD5F49FF1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3097C748-587C-4A60-9068-7C8CD5F49FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3097C748-587C-4A60-9068-7C8CD5F49FF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3097C748-587C-4A60-9068-7C8CD5F49FF1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59BD8157-0E39-434B-8D4D-6940BB2A8BBD}
+	EndGlobalSection
+EndGlobal
