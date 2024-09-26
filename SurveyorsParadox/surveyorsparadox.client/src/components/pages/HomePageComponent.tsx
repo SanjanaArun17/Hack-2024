@@ -10,10 +10,10 @@ const HomePageComponent: React.FC = () => {
                         <Link to="/form">Go to Form Page</Link>
                     </li>
                     <li>
-                        <Link to="/page1">Go to Page 1</Link>
+                        <Link to="/calendar">Go to Calendar</Link>
                     </li>
                     <li>
-                        <Link to="/page2">Go to Page 2</Link>
+                        <Link to="/reports">Go to Reports</Link>
                     </li>
                 </ul>
             </nav>
