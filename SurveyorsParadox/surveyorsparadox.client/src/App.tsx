@@ -1,22 +1,13 @@
 import React from 'react';
-import HomePageComponent from './components/HomePageComponent';
-import FormComponent from './components/FormComponent';
-import CalendarComponent from './components/CalendarComponent';
-import ReportsListComponent from './components/ReportsListComponent';
+import { FC } from 'react';
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {router} from "./routes/route"
+import { RouterProvider } from 'react-router-dom';
 
-const App: React.FC = () => {
+const App : FC = () => {
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<HomePageComponent/>} />
-                <Route path="/form" element={ <FormComponent/> } />
-                <Route path="/page1" element={ <CalendarComponent/>} />
-                <Route path="/page2" element={ <ReportsListComponent/> } />
-            </Routes>
-        </Router>
+        <RouterProvider router={router} />
     );
-};
+}
 
 export default App;
