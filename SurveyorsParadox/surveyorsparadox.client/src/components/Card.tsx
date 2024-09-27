@@ -22,9 +22,9 @@ interface CardProps{
 
 }
 
-export function CardWithForm({title, cardContent, buttonContent, buttonURL} : CardProps) {
+export function Cards({title, cardContent, buttonContent, buttonURL} : CardProps) {
   return (
-    <Card className="dark p-6 w-72 md:m-4" >
+    <Card className="dark p-6 lg:w-72 m-4 w-80 sm:w-auto xl:w-96" >
   <CardHeader>
     <CardTitle className="text-xl">{title}</CardTitle>
     <CardDescription>{cardContent}</CardDescription>
