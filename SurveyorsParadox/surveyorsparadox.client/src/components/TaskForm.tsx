@@ -1,3 +1,5 @@
+import DropdownMenu from "./DropdownMenu";
+
 export default function TaskForm(){
     return(
         <>
@@ -39,7 +41,7 @@ export default function TaskForm(){
                         <div>Job</div>
                     </div>
                     <div className="col-span-7 border text-center p-10">
-                        <div>Dropdown Menu</div>
+                        <div><DropdownMenu/></div>
                     </div>
                 </div>
 
