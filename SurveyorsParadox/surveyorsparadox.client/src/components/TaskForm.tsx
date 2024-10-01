@@ -1,9 +1,12 @@
 import DropdownMenu from "./DropdownMenu";
 import DatePicker  from "./DatePicker";
+import RadioBtns from "./RadioBtns";
+import NavBar from "./NavBar";
 
 export default function TaskForm(){
     return(
         <>
+            <NavBar/>
 
             <div className="m-12">
                 <div className="grid grid-cols-9">
@@ -38,7 +41,7 @@ export default function TaskForm(){
                         <div>TASK</div>
                     </div>
                     <div className="col-span-7 border text-center p-10 ">
-                        <div>LIST OF RADIO BUTTONS</div>
+                        <div><RadioBtns/></div>
                     </div>
                 </div>
 
