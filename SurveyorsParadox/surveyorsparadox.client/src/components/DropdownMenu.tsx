@@ -1,94 +1,87 @@
 "use client"
 
-import * as React from "react"
-import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons"
-
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+import { useState, useRef, useEffect } from "react"
+import React from "react"
 
 const frameworks = [
   {
-    value: "next.js",
-    label: "Next.js",
+    value: "Option 1",
+    label: "Option 1",
   },
   {
-    value: "sveltekit",
-    label: "SvelteKit",
+    value: "Option 2",
+    label: "Option 2",
   },
   {
-    value: "nuxt.js",
-    label: "Nuxt.js",
+    value: "Option 3",
+    label: "Option 3",
   },
   {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
-  },
+    value: "Option 4",
+    label: "Option 4",
+  }
+  , {
+    value: "Option 5",
+    label: "Option 5",
+  }
 ]
 
 export default function DropdownMenu() {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  const [open, setOpen] = useState(false)
+  const [value, setValue] = useState("Select Option")
+  const dropDownRef = useRef<HTMLDivElement | null>(null)
+
+	const handleCloseDropDown = (event : MouseEvent ) =>{
+		if(dropDownRef.current && !dropDownRef.current.contains(event.target as Node)){
+			setOpen(false)
+		}
+	}
+
+	const handleDropdown = (option:string)=>{
+		setOpen(!open);
+		setValue(option)
+	}
+
+	useEffect(()=>{
+		document.addEventListener("mousedown", handleCloseDropDown)
+	})
+
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="dropdown"
-          role="combobox"
-          aria-expanded={open}
-          className="w-[200px] justify-between"
-        >
-          {value
-            ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
-          <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
-        <Command>
-          <CommandInput placeholder="Search framework..." className="h-9" />
-          <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
-            <CommandGroup>
-              {frameworks.map((framework) => (
-                <CommandItem
-                  key={framework.value}
-                  value={framework.value}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
-                    setOpen(false)
-                  }}
-                >
-                  {framework.label}
-                  <CheckIcon
-                    className={cn(
-                      "ml-auto h-4 w-4",
-                      value === framework.value ? "opacity-100" : "opacity-0"
-                    )}
-                  />
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          </CommandList>
-        </Command>
-      </PopoverContent>
-    </Popover>
+	<>
+			
+		<div className="relative inline-block w-full">
+			<div className="flex justify-center">
+				
+				<button id="dropdownButton" 
+				className="border border-yellow-200 rounded-lg p-2 w-2/3 text-left flex justify-between items-center focus:outline-none"
+				onClick={()=> setOpen(!open)}
+				>
+					<span id="selectedOption">{value}</span>
+					<span className="text-gray-500">▼</span>
+				</button>
+			</div>
+			<div className="flex justify-center">
+
+				<div id="dropdownMenu"ref={dropDownRef} className={`absolute z-10 ${open ? "": "hidden" } w-2/3 border border-yellow-200 rounded-lg mt-1 bg-black text-white shadow-lg`}>
+					<div className="max-h-60 overflow-auto">
+						{
+							frameworks.map((val)=>{
+								return (
+									<div className="p-2 hover:border hover:border-yellow-100 cursor-pointer" key={val.value} onClick={()=> handleDropdown(val.value)} >{ val.label }</div>
+								)
+							})
+						}
+					{/* <li className="p-2 hover:bg-gray-100 cursor-pointer" data-value="1">Option 1</li>
+					<li className="p-2 hover:bg-gray-100 cursor-pointer" data-value="2">Option 2</li>
+					<li className="p-2 hover:bg-gray-100 cursor-pointer" data-value="3">Option 3</li> */}
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</>
+
+
   )
 }
