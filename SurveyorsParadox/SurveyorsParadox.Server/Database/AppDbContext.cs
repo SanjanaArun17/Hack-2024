@@ -8,6 +8,6 @@ namespace SurveyorsParadox.Server.Database
         {
         }
 
-        public DbSet<TaskIntentEntity> Tasks { get; set; }
+        public DbSet<TaskIntent> Tasks { get; set; }
     }
 }
