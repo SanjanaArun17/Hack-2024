@@ -14,7 +14,12 @@ export default function RadioBtns(){
 
     const handleChange = (event :React.ChangeEvent<HTMLInputElement>, index : number) =>{
         setSelectedOption(event.target.value)
-        setActiveButton(index)
+        if (activeButton === index) {
+            setActiveButton(-1);
+        } else {
+            setActiveButton(index);
+        }
+
        
     }
 
