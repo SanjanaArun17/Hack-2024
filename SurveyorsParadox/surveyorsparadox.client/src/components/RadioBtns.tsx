@@ -34,7 +34,7 @@ export default function RadioBtns(){
                             <button 
                             key={index}
                             value={selectedOption}
-                            className={`py-2 px-10 border border-yellow-200 rounded-2xl ${index == activeButton ? "bg-yellow-300 text-black border-white" : ""}`}
+                            className={`py-2 px-10 border border-yellow-200 rounded-2xl transition-colors duration-300 ease-in-out ${index == activeButton ? "bg-yellow-300 text-black border-white" : ""}`}
                             onClick={(e : React.ChangeEvent<HTMLInputElement>) => handleChange(e, index)}
                             >{option}
                             </button>
