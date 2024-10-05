@@ -2,7 +2,7 @@ import DropdownMenu from "./DropdownMenu";
 import DatePicker  from "./DatePicker";
 import RadioBtns from "./RadioBtns";
 import NavBar from "./NavBar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function TaskForm(){
 
@@ -43,7 +43,13 @@ export default function TaskForm(){
                         <div>ASSIGNEE</div>
                     </div>
                     <div className="col-span-7 border text-center p-8 ">
-                        <div>NAME</div>
+                        <div>
+                            <input 
+                            className="bg-black text-white px-4 py-1  rounded-md border border-yellow-100"        
+                            type="text"
+                            placeholder="Enter Assignee Name"
+                            />
+                        </div>
                     </div>
                 </div>
 
@@ -70,7 +76,12 @@ export default function TaskForm(){
                         <div>DESCRIPTION</div>
                     </div>
                     <div className="col-span-7 border text-center p-10 ">
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, sed maxime? Veniam obcaecati iste reprehenderit necessitatibus, deleniti culpa aliquid, voluptate maxime laboriosam quasi dignissimos in, neque earum minima. Dolor perspiciatis, expedita quasi dolore cupiditate itaque ducimus. Nam laboriosam est rerum hic dolor ipsa. Alias odit assumenda sequi pariatur maiores ullam?</div>
+                        <div>
+                            <textarea 
+                            className="bg-black text-white w-1/2 h-4/5 px-2 py-1 rounded-md border border-yellow-100"
+                            placeholder="Enter Description"
+                            />
+                        </div>
                     </div>
                 </div>
 

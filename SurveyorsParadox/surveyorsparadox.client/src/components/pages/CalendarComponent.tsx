@@ -1,3 +1,10 @@
-const CalendarComponent: React.FC = () => <h2>This is Calendar</h2>;
+import Calendar from "../Calendar";
+import NavBar from "../NavBar";
+
+const CalendarComponent: React.FC = () => 
+<>
+    <NavBar></NavBar>
+    <Calendar/>
+</>;
 
 export default CalendarComponent;
