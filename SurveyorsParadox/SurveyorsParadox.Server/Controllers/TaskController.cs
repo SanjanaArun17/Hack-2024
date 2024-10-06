@@ -38,7 +38,7 @@ namespace SurveyorsParadox.Server.Controllers
         public void PostTask([FromBody] JObject jobject)
         {
             var task = jobject.ToObject<TaskIntent>();
-            this.taskService.TaskIntents.Add(task);
+            this.taskService.AddTask(task);
         }
 
         [HttpGet("getreports")]
@@ -62,7 +62,7 @@ namespace SurveyorsParadox.Server.Controllers
         public void PostReport([FromBody] JObject jobject)
         {
             var report = jobject.ToObject<ReportIntent>();
-            this.taskService.ReportIntents.Add(report);
+            this.taskService.AddReport(report);
         }
     }
 }

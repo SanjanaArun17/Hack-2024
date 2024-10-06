@@ -4,8 +4,12 @@ namespace SurveyorsParadox.Server
 {
     public interface ITaskService
     {
-        List<TaskIntent> TaskIntents { get; }
+        IReadOnlyList<TaskIntent> TaskIntents { get; }
 
-        List<ReportIntent> ReportIntents { get; }
+        IReadOnlyList<ReportIntent> ReportIntents { get; }
+
+        void AddTask(TaskIntent taskIntent);
+
+        void AddReport(ReportIntent reportIntent);
     }
 }
