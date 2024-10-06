@@ -5,6 +5,8 @@
 //     AccordionTrigger,
 //   } from "@/components/ui/accordion"
 
+import Dialog from "./Dialog";
+
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
@@ -12,12 +14,17 @@ export default function ReportListItem(){
 
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
-    const [buttonText, setButtonText] = useState("Open")
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const toggleCollapse = () => {
-        
-        setIsOpen(!isOpen);
-    };
+	const openModal = () => {
+		setIsModalOpen(true);
+	};
+
+	const closeModal = () => {
+		setIsModalOpen(false);
+	};
+
+    const [buttonText, setButtonText] = useState("Open")
 
     useEffect(()=>{
         if(isOpen)
@@ -28,20 +35,6 @@ export default function ReportListItem(){
 
     return(
         <>
-
-            {/* <div className="flex justify-center">
-                <div className="w-2/3 border-2 border-slate-100 p-6">
-                    <Accordion type="single" collapsible className="w-full">
-                        <AccordionItem value="item-1">
-                            <AccordionTrigger>Report Item</AccordionTrigger>
-                                <AccordionContent>
-                                    Report Description Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eaque quisquam officiis ipsa quae voluptatum? Voluptatibus accusamus possimus voluptatem iste, alias praesentium facere sed aliquam minima sequi laborum, quos earum?
-                                </AccordionContent>
-                        </AccordionItem>
-                        
-                    </Accordion>
-                </div>
-            </div> */}
 
             <div>
                 <div className="flex justify-center my-6">
@@ -59,7 +52,7 @@ export default function ReportListItem(){
                                     <div>
                                         <div>Icon</div>
                                         <div>Icon.png</div>
-                                        <Button className={`rounded hover:bg-white hover:text-black` } onClick={toggleCollapse}>{buttonText}</Button>
+                                        <Button className={`rounded hover:bg-white hover:text-black` } onClick={openModal}>{buttonText}</Button>
                                     </div>
                             </div>
                         </div>
@@ -73,6 +66,29 @@ export default function ReportListItem(){
                     </div>
 
                 </div>
+                <Dialog isOpen={isModalOpen} onClose={closeModal}>
+                    <h2 className="text-lg font-bold">Modal Content</h2>
+                    <p className="text-gray-700">
+                    This is some content inside the modal. You can add as much content as
+                    you like, and this area will become scrollable if there’s too much text.
+                    </p>
+                    <p className="text-gray-700 mt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+                    vestibulum nibh nec elit hendrerit varius. Duis ac dictum libero. Sed
+                    non urna a nibh varius auctor.
+                    </p>
+                    <p className="text-gray-700 mt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+                    vestibulum nibh nec elit hendrerit varius. Duis ac dictum libero. Sed
+                    non urna a nibh varius auctor.
+                    </p>
+                    <p className="text-gray-700 mt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+                    vestibulum nibh nec elit hendrerit varius. Duis ac dictum libero. Sed
+                    non urna a nibh varius auctor.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam porro fugiat dolorem iste maxime quo, pariatur eligendi quaerat recusandae rem id inventore consectetur molestiae dicta! Esse dolorum porro quis, facilis eius expedita temporibus quos fuga consequatur aspernatur tenetur ex vitae. Cumque quaerat error beatae ea cum voluptate incidunt dolorum nulla rem sequi, consequuntur aperiam eveniet harum voluptates deleniti quas et optio quam necessitatibus distinctio delectus molestiae perferendis quis? Aperiam dicta, inventore, numquam facere iure nemo quisquam tempore laudantium quis reprehenderit totam minus? Totam commodi placeat, ea sapiente ipsa molestias, earum, dolor illum iure amet aspernatur nam magnam. Ea, expedita provident.
+                    </p>
+                </Dialog>
             </div>
         </>
     );
