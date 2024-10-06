@@ -26,7 +26,7 @@ export default function RadioBtns(){
     return(
         <>
         
-            <div className="flex justify-around">
+            <div className="sm:flex sm:justify-around">
                 
                 {
                     options.map((option :string, index: number) =>{
@@ -34,7 +34,7 @@ export default function RadioBtns(){
                             <button 
                             key={index}
                             value={selectedOption}
-                            className={`py-2 px-10 border border-yellow-200 rounded-2xl transition-colors duration-300 ease-in-out ${index == activeButton ? "bg-yellow-300 text-black border-white" : ""}`}
+                            className={`m-2 w-36 md:py-2 lg:px-10 md:px-6 py-1 px-3 border border-yellow-200 rounded-2xl transition-colors duration-300 ease-in-out ${index == activeButton ? "bg-yellow-300 text-black border-white" : ""}`}
                             onClick={(e : React.ChangeEvent<HTMLInputElement>) => handleChange(e, index)}
                             >{option}
                             </button>
