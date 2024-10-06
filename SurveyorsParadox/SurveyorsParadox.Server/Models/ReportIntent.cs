@@ -4,9 +4,14 @@ namespace SurveyorsParadox.Server.Models
 {
     public class ReportIntent
     {
-        [Key]
         public Guid ReportId { get; set; }
 
-        public string Result { get; set; } = string.Empty;
+        public string Location { get; set; } = string.Empty;
+
+        public string Title { get; set; } = string.Empty;
+
+        public string TimeTaken { get; set; } = string.Empty;
+
+        public Dictionary<string, PointResult> ResportResults { get; set; } = new Dictionary<string, PointResult>();
     }
 }
