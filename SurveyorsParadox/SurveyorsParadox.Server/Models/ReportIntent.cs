@@ -12,10 +12,10 @@ namespace SurveyorsParadox.Server.Models
 
         public string TimeTaken { get; set; } = string.Empty;
 
-        // Add datetime
+        public string Date { get; set; }
 
-        // Add assignee
+        public string Assignee { get; set; }
 
-        public Dictionary<string, PointResult> ResportResults { get; set; } = new Dictionary<string, PointResult>();
+        public List<PointResult> ResportResults { get; set; } = new List<PointResult>();
     }
 }
