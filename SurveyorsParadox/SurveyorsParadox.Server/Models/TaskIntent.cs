@@ -6,7 +6,7 @@
 
         public string JobSite { get; set; }
 
-        public int Location { get; set; }
+        public string Location { get; set; }
 
         public string Assignee { get; set; }
 
