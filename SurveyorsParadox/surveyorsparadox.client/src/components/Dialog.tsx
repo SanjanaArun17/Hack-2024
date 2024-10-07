@@ -43,7 +43,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
       }`}
     >
       <div
-        className={`bg-black rounded-lg shadow-lg border w-8/12 md:w-1/2 lg:w-8/12 max-h-[80vh] overflow-hidden transform transition-all duration-300 ${
+        className={`bg-black rounded-lg shadow-lg border w-11/12 sm:10/12 md:w-10/12 lg:8/12 xl:w-3/5 2xl:w-1/2 min-h-[70vh] max-h-[80vh] overflow-hidden transform transition-all duration-300 ${
           animate ? 'scale-100' : 'scale-90'
         }`}
       >
@@ -51,15 +51,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         <div className="flex justify-between items-center p-4 border-b border-gray-200">
           <h2 className="text-xl font-semibold">Report</h2>
           <button
-            className="text-gray-500 hover:text-gray-700"
+            className="text-gray-500 hover:text-gray-700 text-2xl"
             onClick={onClose}
           >
-            &times;
+            X
           </button>
         </div>
 
         {/* Modal Content (Scrollable) */}
-        <div className="p-4 overflow-y-auto max-h-[60vh]">
+        <div className="sm:p-4 overflow-y-auto max-h-[70vh]">
           {children}
         </div>
       </div>
