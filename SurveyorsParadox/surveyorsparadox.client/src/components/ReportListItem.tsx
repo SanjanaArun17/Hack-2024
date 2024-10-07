@@ -1,3 +1,4 @@
+import { randomUUID } from "crypto";
 import Dialog from "./Dialog";
 import { useState } from "react";
 // import { Button } from "./ui/button";
@@ -15,52 +16,58 @@ export default function ReportListItem(){
 	};
 
     const reportObject = {
+        reportID : "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        location : "Trimble Information Technology Building",
+        title : "Job Title",
+        timeTaken : "5.6",
+        date : "27-09-2024",
+        assignee : "Name",
         pointDetails :[
             {
                 pointName : "Point 01",
-                laidOut : true,
+                isLaidOut : true,
+                dateTime : "",
                 tolernace : {
                     HA: 10,
                     VA: 20,
-                    DA: 23
                 }
             },
             {
                 pointName : "Point 02",
-                laidOut : true,
+                isLaidOut : true,
+                dateTime : "",
                 tolernace : {
                     HA: 10,
                     VA: 20,
-                    DA: 23
                 }
-            }, 
+            },
             {
                 pointName : "Point 03",
-                laidOut : false,
+                isLaidOut : false,
+                dateTime : "",
                 tolernace : {
                     HA: 10,
                     VA: 20,
-                    DA: 23
                 }
-            }, 
+            },
             {
                 pointName : "Point 04",
-                laidOut : true,
+                isLaidOut : true,
+                dateTime : "",
                 tolernace : {
                     HA: 10,
                     VA: 20,
-                    DA: 23
                 }
-            }, 
+            },
             {
                 pointName : "Point 05",
-                laidOut : true,
+                isLaidOut : true,
+                dateTime : "",
                 tolernace : {
                     HA: 10,
                     VA: 20,
-                    DA: 23
                 }
-            }, 
+            },
         ]
     }
 
@@ -73,9 +80,9 @@ export default function ReportListItem(){
                         <div className="grid grid-cols-2">
                             <div>
                                 <div>
-                                    <div className="text-4xl my-2">27-09-2024</div>
-                                    <div className="text-zinc-400 text-sm my-2">Trimble Information Technology Building</div>
-                                    <div className="my-2">Name</div>
+                                    <div className="text-4xl my-2">{reportObject.date}</div>
+                                    <div className="text-zinc-400 text-sm my-2">{reportObject.location}</div>
+                                    <div className="my-2">{reportObject.assignee}</div>
                                 </div>
                             </div>
 
@@ -104,7 +111,6 @@ export default function ReportListItem(){
                                 <div className="flex justify-around">
                                     <div>HA</div>
                                     <div>VA</div>
-                                    <div>DA</div>
                                 </div>
                             </div>
                         </div>
@@ -117,20 +123,30 @@ export default function ReportListItem(){
                                             {point.pointName}
                                         </div>
                                         <div className="border text-center py-4">
-                                            {point.laidOut ? "YES" : "NO"}
+                                            {point.isLaidOut ? "YES" : "NO"}
                                         </div>
                                         <div className="border text-center py-4">
                                             
                                             <div className="flex justify-around">
                                                 <div>{point.tolernace.HA}</div>
                                                 <div>{point.tolernace.VA}</div>
-                                                <div>{point.tolernace.DA}</div>
                                             </div>
                                         </div>
                                     </div>
                                 );
                             })
                         }
+                        <div className="ml-10 mt-5">
+                            <div className="m-2 p-4">
+                                {reportObject.title}
+                            </div>
+                            <div className="m-2 p-4">
+                                {reportObject.timeTaken} Minutes to Layout
+                            </div>
+                            <div className="p-4">
+                                Chennai
+                            </div>
+                        </div>
                     </div>
                 </Dialog>
             </div>
