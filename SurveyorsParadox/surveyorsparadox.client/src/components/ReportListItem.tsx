@@ -1,18 +1,8 @@
-// import {
-//     Accordion,
-//     AccordionContent,
-//     AccordionItem,
-//     AccordionTrigger,
-//   } from "@/components/ui/accordion"
-
 import Dialog from "./Dialog";
-
-import { useEffect, useState } from "react";
-import { Button } from "./ui/button";
+import { useState } from "react";
+// import { Button } from "./ui/button";
 
 export default function ReportListItem(){
-
-    const [isOpen, setIsOpen] = useState<boolean>(false)
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -24,21 +14,62 @@ export default function ReportListItem(){
 		setIsModalOpen(false);
 	};
 
-    const [buttonText, setButtonText] = useState("Open")
-
-    useEffect(()=>{
-        if(isOpen)
-            setButtonText("Close")
-        else
-            setButtonText("Open")
-    }, [isOpen])
+    const reportObject = {
+        pointDetails :[
+            {
+                pointName : "Point 01",
+                laidOut : true,
+                tolernace : {
+                    HA: 10,
+                    VA: 20,
+                    DA: 23
+                }
+            },
+            {
+                pointName : "Point 02",
+                laidOut : true,
+                tolernace : {
+                    HA: 10,
+                    VA: 20,
+                    DA: 23
+                }
+            }, 
+            {
+                pointName : "Point 03",
+                laidOut : false,
+                tolernace : {
+                    HA: 10,
+                    VA: 20,
+                    DA: 23
+                }
+            }, 
+            {
+                pointName : "Point 04",
+                laidOut : true,
+                tolernace : {
+                    HA: 10,
+                    VA: 20,
+                    DA: 23
+                }
+            }, 
+            {
+                pointName : "Point 05",
+                laidOut : true,
+                tolernace : {
+                    HA: 10,
+                    VA: 20,
+                    DA: 23
+                }
+            }, 
+        ]
+    }
 
     return(
         <>
 
             <div>
                 <div className="flex justify-center my-6">
-                    <div className="w-4/5 border-2 rounded-md border-slate-100 hover:border-yellow-300 p-6">
+                    <div className="w-4/5 border-2 rounded-md cursor-pointer border-slate-100 hover:border-yellow-300 p-6" onClick={openModal}>
                         <div className="grid grid-cols-2">
                             <div>
                                 <div>
@@ -48,46 +79,59 @@ export default function ReportListItem(){
                                 </div>
                             </div>
 
-                            <div className="flex justify-end h-full">
-                                    <div>
-                                        <div>Icon</div>
-                                        <div>Icon.png</div>
-                                        <Button className={`rounded hover:bg-white hover:text-black` } onClick={openModal}>{buttonText}</Button>
-                                    </div>
+                            <div className="flex justify-end h-full items-center">
+                                <div>
+                                    <div>Icon</div>
+                                    <div>Icon.png</div>
+                                    {/* <Button className={`rounded hover:bg-white hover:text-black` } onClick={openModal}>{buttonText}</Button> */}
+                                </div>
                             </div>
-                        </div>
-
-                        <div className={`overflow-hidden transition-max-height duration-300 ease-in-out ${isOpen ? 'max-h-40' : 'max-h-0'}`}>
-                            <div className="p-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eveniet est distinctio facere ipsum deleniti architecto sit doloribus quasi beatae, ipsam unde vel aliquam odio praesentium quae voluptatum illo veniam molestiae consectetur cum impedit! Ab ipsam tempore quaerat. Voluptas quas recusandae consequatur cumque blanditiis, dolores sint ex nulla distinctio, culpa ratione numquam! Obcaecati numquam earum nemo ab dolorum accusantium facere nostrum perspiciatis soluta repellendus? Aliquid ratione exercitationem blanditiis eius voluptates deleniti laudantium illo repellendus maiores alias sunt assumenda inventore, unde cupiditate tenetur dolore rem at delectus quasi a porro illum vitae nobis iusto? Unde consectetur a dicta! Officiis, nobis distinctio!
-                            </div>
-                        </div>
-                        
+                        </div>                        
                     </div>
 
                 </div>
                 <Dialog isOpen={isModalOpen} onClose={closeModal}>
-                    <h2 className="text-lg font-bold">Modal Content</h2>
-                    <p className="text-gray-700">
-                    This is some content inside the modal. You can add as much content as
-                    you like, and this area will become scrollable if there’s too much text.
-                    </p>
-                    <p className="text-gray-700 mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-                    vestibulum nibh nec elit hendrerit varius. Duis ac dictum libero. Sed
-                    non urna a nibh varius auctor.
-                    </p>
-                    <p className="text-gray-700 mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-                    vestibulum nibh nec elit hendrerit varius. Duis ac dictum libero. Sed
-                    non urna a nibh varius auctor.
-                    </p>
-                    <p className="text-gray-700 mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-                    vestibulum nibh nec elit hendrerit varius. Duis ac dictum libero. Sed
-                    non urna a nibh varius auctor.
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam porro fugiat dolorem iste maxime quo, pariatur eligendi quaerat recusandae rem id inventore consectetur molestiae dicta! Esse dolorum porro quis, facilis eius expedita temporibus quos fuga consequatur aspernatur tenetur ex vitae. Cumque quaerat error beatae ea cum voluptate incidunt dolorum nulla rem sequi, consequuntur aperiam eveniet harum voluptates deleniti quas et optio quam necessitatibus distinctio delectus molestiae perferendis quis? Aperiam dicta, inventore, numquam facere iure nemo quisquam tempore laudantium quis reprehenderit totam minus? Totam commodi placeat, ea sapiente ipsa molestias, earum, dolor illum iure amet aspernatur nam magnam. Ea, expedita provident.
-                    </p>
+                    <div>
+                        <div className="grid grid-cols-3">
+                            <div className="border flex items-center justify-center">
+                                POINT NAME
+                            </div>
+                            <div className="border flex items-center justify-center">
+                                LAID OUT
+                            </div>
+                            <div className="border text-center">
+                                <div>TOLERANCE</div>
+                                <div className="flex justify-around">
+                                    <div>HA</div>
+                                    <div>VA</div>
+                                    <div>DA</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {
+                            reportObject.pointDetails.map((point)=>{
+                                return (
+                                    <div className="grid grid-cols-3">
+                                        <div className="border text-center py-4">
+                                            {point.pointName}
+                                        </div>
+                                        <div className="border text-center py-4">
+                                            {point.laidOut ? "YES" : "NO"}
+                                        </div>
+                                        <div className="border text-center py-4">
+                                            
+                                            <div className="flex justify-around">
+                                                <div>{point.tolernace.HA}</div>
+                                                <div>{point.tolernace.VA}</div>
+                                                <div>{point.tolernace.DA}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
                 </Dialog>
             </div>
         </>
