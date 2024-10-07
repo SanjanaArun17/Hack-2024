@@ -33,7 +33,7 @@ namespace SurveyorsParadox.Server
                 TaskDescription = taskIntent.TaskDescription,
                 IsLayoutFully = taskIntent.IsLayoutFully,
                 JobSite = taskIntent.JobSite,
-                Location = taskIntent.Location,
+                //Location = taskIntent.Location,
                 PointNames = taskIntent.PointNames,
                 TaskId = taskIntent.TaskId,
                 TaskType = taskIntent.TaskType,
