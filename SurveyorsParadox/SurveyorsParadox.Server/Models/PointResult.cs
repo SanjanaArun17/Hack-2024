@@ -2,7 +2,11 @@
 {
     public class PointResult
     {
-        public double Tolerance { get; set; }
+        public string PointName { get; set; }
+
+        public double HA { get; set; }
+
+        public double VA { get; set; }
 
         public string DateTime { get; set; }
 
