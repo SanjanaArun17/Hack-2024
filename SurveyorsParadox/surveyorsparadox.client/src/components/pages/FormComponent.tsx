@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './FormComponent.css';
 import TaskForm from '../TaskForm';
+import NavBar from '../NavBar';
 
 interface SurveyTask {
     jobsite: string;
@@ -34,21 +35,10 @@ const FormComponent: React.FC = () => {
     };
 
     return (
-        // <div className="form-container">
-        //     <form onSubmit={handleSendRequest}>
-        //         <div>
-        //             <label htmlFor="jobSiteListItems">Job site :</label>
-        //             <select name="jobSiteListItems" value={task.jobsite} onChange={handleJobSiteChange}>
-        //                 <option value="option1">Trimble India Office</option>
-        //                 <option value="option2">None</option>
-        //             </select>
-        //         </div>
-
-        //         <button type="submit">Send Request</button>
-        //     </form>
-        // </div>
-
-        <TaskForm/>
+        <>
+            <NavBar/>
+            <TaskForm/>
+        </>
     )
 };
 

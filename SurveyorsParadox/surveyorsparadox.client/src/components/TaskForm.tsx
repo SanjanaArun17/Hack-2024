@@ -1,7 +1,6 @@
 import DropdownMenu from "./DropdownMenu";
 import DatePicker  from "./DatePicker";
 import RadioBtns from "./RadioBtns";
-import NavBar from "./NavBar";
 import { useState } from "react";
 
 export default function TaskForm(){
@@ -17,8 +16,6 @@ export default function TaskForm(){
 
     return(
         <>
-            <NavBar/>
-            
             <div className="m-12 ">
                 <div className="grid grid-cols-9">
                     <div className="col-span-2 border text-center p-8">

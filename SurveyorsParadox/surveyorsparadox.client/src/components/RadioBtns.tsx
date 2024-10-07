@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 const options = [
-    "Option 1",
-    "Option 2",
-    "Option 3",
-    "Option 4"
+    "LAYOUT POINTS",
+    "SURFACE INSPECTION",
+    "SCAN",
+    "INSPECT FLOOR"
 ]
 
 export default function RadioBtns(){
@@ -34,7 +34,7 @@ export default function RadioBtns(){
                             <button 
                             key={index}
                             value={selectedOption}
-                            className={`m-2 w-36 md:py-2 lg:px-10 md:px-6 py-1 px-3 border border-yellow-200 rounded-2xl transition-colors duration-300 ease-in-out ${index == activeButton ? "bg-yellow-300 text-black border-white" : ""}`}
+                            className={`m-2 font-semibold w-36 text-sm xl:w-48 md:py-2 md:px-6 py-1 px-3 border border-yellow-200 rounded-2xl transition-colors duration-300 ease-in-out ${index == activeButton ? "bg-yellow-300 text-black border-white" : ""}`}
                             onClick={(e : React.ChangeEvent<HTMLInputElement>) => handleChange(e, index)}
                             >{option}
                             </button>
