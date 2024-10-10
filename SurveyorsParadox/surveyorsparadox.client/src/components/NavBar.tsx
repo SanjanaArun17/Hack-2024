@@ -37,13 +37,13 @@ export default function NavBar(){
                 </div>
                 <div className="hidden sm:flex items-center">
                     <div className="mx-4">
-                        <NavLink to="/form" className={({isActive})=>`${ isActive? "text-yellow-400" : "text-white" }`}>ASSIGN TASK</NavLink>
+                        <NavLink to="/form" className={({isActive})=>`${ isActive? "text-customBlue" : "text-black" }`}>ASSIGN TASK</NavLink>
                     </div>
                     <div className="mx-4">
-                        <NavLink to="/calendar" className={({isActive})=>`${ isActive? "text-yellow-400" : "text-white" }`}>CALENDAR</NavLink>
+                        <NavLink to="/calendar" className={({isActive})=>`${ isActive? "text-customBlue" : "text-black" }`}>CALENDAR</NavLink>
                     </div>
                     <div className="mx-4">
-                        <NavLink to="/reports" className={({isActive})=>`${ isActive? "text-yellow-400" : "text-white" }`}>REPORTS</NavLink>
+                        <NavLink to="/reports" className={({isActive})=>`${ isActive? "text-customBlue" : "text-black" }`}>REPORTS</NavLink>
                     </div>
                 </div>
                

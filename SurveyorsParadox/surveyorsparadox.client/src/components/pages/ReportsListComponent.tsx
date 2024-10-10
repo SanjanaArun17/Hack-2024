@@ -5,7 +5,7 @@ import NavBar from "../NavBar"
   export default function ReportListComponent() {
     return (
         <>
-            <div className=" text-white font-bold">
+            <div>
 
                 <NavBar/>
 
