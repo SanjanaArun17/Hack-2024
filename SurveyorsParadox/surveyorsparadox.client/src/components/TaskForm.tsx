@@ -61,6 +61,29 @@ export default function TaskForm(){
 
                 <div className="grid grid-cols-9">
                     <div className="col-span-2 border text-center p-8">
+                        <div>POINT </div>
+                    </div>
+                    <div className="col-span-7 border text-center p-8 ">
+                        <div className="sm:flex justify-between">
+                            <div className="mx-auto">
+                                <input type="text"
+                                className="bg-black text-white px-4 py-1 lg:w-80  rounded-md border border-yellow-100"
+                                placeholder="Enter Point Name"
+                                />
+                            </div>
+                            <div className="flex items-center">
+                                <input type="checkbox"
+                                id="All points"
+                                className="mr-2"
+                                />
+                                <label htmlFor="All points">All points</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-9">
+                    <div className="col-span-2 border text-center p-8">
                         <div>DATE</div>
                     </div>
                     <div className="col-span-7 border text-center p-8 ">
