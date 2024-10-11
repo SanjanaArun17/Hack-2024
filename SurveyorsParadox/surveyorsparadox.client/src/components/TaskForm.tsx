@@ -11,6 +11,9 @@ export default function TaskForm(){
     const handleSendRequest = () =>{
         setCanSend(!canSend)
     }
+
+    const jobOptions = ["Trimble Information Technology Building"]
+    const locationOptions = ["Floor 1", "Floor 2", "Floor 3", "Floor 4", "Floor 5", "Floor 6", "Floor 7"]
     
     const buttonActionText = canSend ? "SEND REQUEST" : "CANCEL REQUEST";
 
@@ -20,10 +23,10 @@ export default function TaskForm(){
             <div className="m-12">
                 <div className="grid grid-cols-9">
                     <div className="col-span-2 border border-black text-center p-8">
-                        <div>JOB</div>
+                        <div>JOB SITE</div>
                     </div>
                     <div className="col-span-7 border border-black text-center p-8">
-                        <div><DropdownMenu/></div>
+                        <div><DropdownMenu options={jobOptions}/></div>
                     </div>
                 </div>
 
@@ -32,7 +35,7 @@ export default function TaskForm(){
                         <div>LOCATION</div>
                     </div>
                     <div className="col-span-7 border border-black text-center p-8 ">
-                        <div><DropdownMenu/></div>
+                        <div><DropdownMenu options={locationOptions}/></div>
                     </div>
                 </div>
 
