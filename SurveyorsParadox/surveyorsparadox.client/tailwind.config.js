@@ -12,6 +12,22 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+		fontFamily :{
+			guton : ["Guton", "sans-serif"],
+			geist : ["Geist", "sans-serif"]
+			
+		},
+		fontWeight: {
+			thin: 100,
+			extraLight: 200,
+			light: 300,
+			normal: 400,
+			medium: 500,
+			semiBold: 600,
+			bold: 700,
+			extraBold: 800,
+			black: 900,
+		},
   		colors: {
 			customBlue : "#512BD4",
 			customYellow : "#F6E035",

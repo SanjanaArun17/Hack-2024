@@ -61,11 +61,11 @@ export default function DropdownMenu({options} : dropDownProps) {
 			<div className="flex justify-center">
 				
 				<button id="dropdownButton" 
-				className="border-2 border-customBlue rounded-lg p-2 w-2/3 text-left flex justify-between items-center focus:outline-none"
+				className="border-2 border-customBlue rounded-lg p-2 w-2/3 focus:outline-none"
 				ref={buttonRef}
 				onClick={() => setOpen(!open)}
 				>
-					<span id="selectedOption">{value}</span>
+					<span className="inline-block w-11/12" id="selectedOption">{value}</span>
 					<span className="text-gray-500">▼</span>
 				</button>
 			</div>

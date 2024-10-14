@@ -34,7 +34,7 @@ export default function RadioBtns(){
                             <button 
                             key={index}
                             value={selectedOption}
-                            className={`m-2 font-semibold w-36 text-sm xl:w-48 md:py-2 md:px-6 py-1 px-3 border border-customBlue rounded-2xl transition-colors duration-300 ease-in-out ${index == activeButton ? "bg-customBlue text-white border-white" : ""}`}
+                            className={`m-2 font-medium w-36 text-sm xl:w-48 md:py-2 md:px-6 py-1 px-3 border border-customBlue rounded-3xl transition-colors duration-300 ease-in-out ${index == activeButton ? "bg-customBlue text-white border-white" : ""}`}
                             onClick={(e : React.ChangeEvent<HTMLInputElement>) => handleChange(e, index)}
                             >{option}
                             </button>

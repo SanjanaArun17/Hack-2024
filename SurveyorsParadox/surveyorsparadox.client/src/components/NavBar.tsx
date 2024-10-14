@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 export default function NavBar(){
 
@@ -10,8 +10,8 @@ export default function NavBar(){
 
     return (
         <div className="border border-b-slate-100">
-            <nav className="w-full flex justify-between h-20 font-semibold">
-                <div className="m-10 flex items-center">
+            <nav className="w-full flex justify-between h-20">
+                <div className="m-10 flex items-center font-guton font-bold">
                     <NavLink to="/" >OFFICE 2 FIELD</NavLink>
                 </div>
                  <div className={`w-40 justify-center flex items-center sm:hidden mx-5`}>
@@ -35,7 +35,7 @@ export default function NavBar(){
                         </svg>
                     </button>
                 </div>
-                <div className="hidden sm:flex items-center">
+                <div className="hidden sm:flex items-center font-guton font-semibold">
                     <div className="mx-4">
                         <NavLink to="/form" className={({isActive})=>`${ isActive? "text-customBlue" : "text-black" }`}>ASSIGN TASK</NavLink>
                     </div>

@@ -75,14 +75,14 @@ export default function ReportListItem(){
         <>
 
             <div>
-                <div className="flex justify-center my-6 font-bold">
+                <div className="flex justify-center my-6 font-guton">
                     <div className="group w-4/5 border-2 border-black rounded-lg cursor-pointer transition-colors duration-200 hover:bg-customBlue hover:text-white p-6" onClick={openModal}>
                         <div className="grid grid-cols-2">
                             <div>
                                 <div>
-                                    <div className="text-4xl my-2">{reportObject.date}</div>
-                                    <div className="text-zinc-400 group-hover:text-white text-sm my-2">{reportObject.location}</div>
-                                    <div className="my-2">{reportObject.assignee}</div>
+                                    <div className="text-4xl my-2 font-bold">{reportObject.date}</div>
+                                    <div className="group-hover:text-white font-medium text-sm my-2">{reportObject.location}</div>
+                                    <div className="my-2 font-medium">{reportObject.assignee}</div>
                                 </div>
                             </div>
 

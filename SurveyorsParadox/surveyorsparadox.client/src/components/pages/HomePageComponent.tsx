@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import { Cards } from '../Card';
 const HomePageComponent: React.FC = () => {
     return (
