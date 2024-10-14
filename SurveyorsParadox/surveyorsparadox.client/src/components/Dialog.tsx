@@ -48,8 +48,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         }`}
       >
         {/* Modal Header */}
-        <div className="flex justify-between items-center p-4 border-b border-black">
-          <h2 className="text-3xl text-customBlue font-bold">REPORT</h2>
+        <div className="flex font-guton font-bold justify-between items-center p-4 border-b border-black">
+          <h2 className="text-5xl text-customBlue font-bold">REPORT</h2>
           <button
             className="text-gray-500 hover:text-gray-700 text-2xl"
             onClick={onClose}
@@ -59,7 +59,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         </div>
 
         {/* Modal Content (Scrollable) */}
-        <div className="sm:p-4 overflow-y-auto max-h-[70vh]">
+        <div className="sm:p-4 overflow-y-auto max-h-[70vh] font-guton font-semibold">
           {children}
         </div>
       </div>

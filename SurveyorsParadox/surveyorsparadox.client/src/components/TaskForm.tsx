@@ -20,33 +20,33 @@ export default function TaskForm(){
 
     return(
         <>
-            <div className="m-12">
+            <div className="m-12 font-guton">
                 <div className="grid grid-cols-9">
-                    <div className="col-span-2 border border-black text-center p-8">
+                    <div className="col-span-2 border border-black text-center p-8 font-semibold">
                         <div>JOB SITE</div>
                     </div>
-                    <div className="col-span-7 border border-black text-center p-8">
+                    <div className="col-span-7 border border-black text-center p-8 font-medium">
                         <div><DropdownMenu options={jobOptions}/></div>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-9">
-                    <div className="col-span-2 border border-black text-center p-8">
+                    <div className="col-span-2 border border-black text-center p-8 font-semibold">
                         <div>LOCATION</div>
                     </div>
-                    <div className="col-span-7 border border-black text-center p-8 ">
+                    <div className="col-span-7 border border-black text-center p-8 font-medium">
                         <div><DropdownMenu options={locationOptions}/></div>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-9">
-                    <div className="col-span-2 border border-black text-center p-8">
+                    <div className="col-span-2 border border-black text-center p-8 font-semibold">
                         <div>ASSIGNEE</div>
                     </div>
-                    <div className="col-span-7 border border-black text-center p-8 ">
+                    <div className="col-span-7 border border-black text-center p-8 font-medium">
                         <div>
                             <input 
-                            className=" px-4 py-1  rounded-md border-2 border-customBlue"        
+                            className=" px-4 py-1 font-guton font-medium rounded-md border-2 border-customBlue"        
                             type="text"
                             placeholder="Enter Assignee Name"
                             />
@@ -55,23 +55,23 @@ export default function TaskForm(){
                 </div>
 
                 <div className="grid grid-cols-9">
-                    <div className="col-span-2 border border-black text-center p-8">
+                    <div className="col-span-2 border border-black text-center p-8 font-semibold">
                         <div>TASK</div>
                     </div>
-                    <div className="col-span-7 border border-black text-center p-8 ">
+                    <div className="col-span-7 border border-black text-center p-8 font-medium">
                         <div><RadioBtns/></div>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-9">
-                    <div className="col-span-2 border border-black text-center p-8">
+                    <div className="col-span-2 border border-black text-center p-8 font-semibold">
                         <div>POINT </div>
                     </div>
-                    <div className="col-span-7 border border-black text-center p-8 ">
+                    <div className="col-span-7 border border-black text-center p-8 font-medium">
                         <div className="sm:flex justify-between">
                             <div className="mx-auto">
                                 <input type="text"
-                                className=" px-4 py-1 lg:w-80  rounded-md border-2 border-customBlue"
+                                className=" px-4 py-1 lg:w-80 rounded-md border-2 border-customBlue"
                                 placeholder="Enter Point Name"
                                 />
                             </div>
@@ -89,19 +89,19 @@ export default function TaskForm(){
                 </div>
 
                 <div className="grid grid-cols-9">
-                    <div className="col-span-2 border border-black text-center p-8">
+                    <div className="col-span-2 border border-black text-center p-8 font-semibold">
                         <div>DATE</div>
                     </div>
-                    <div className="col-span-7 border border-black text-center p-8 ">
+                    <div className="col-span-7 border border-black text-center p-8 font-medium">
                         <div><DatePicker/></div>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-9">
-                    <div className="col-span-2 border border-black text-center p-10">
+                    <div className="col-span-2 border border-black text-center p-10 font-semibold">
                         <div>DESCRIPTION</div>
                     </div>
-                    <div className="col-span-7 border border-black text-center p-10 ">
+                    <div className="col-span-7 border border-black text-center p-10 font-medium">
                         <div>
                             <textarea 
                             className=" w-1/2 h-4/5 px-2 py-1 rounded-md border-2 border-customBlue"

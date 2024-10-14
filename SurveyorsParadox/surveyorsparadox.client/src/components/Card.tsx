@@ -26,7 +26,7 @@ export function Cards({title, cardContent, buttonContent, buttonURL} : CardProps
   return (
     <Card className="dark p-6 lg:w-72 m-4 w-80 sm:w-auto xl:w-96" >
   <CardHeader>
-    <CardTitle className="text-xl">{title}</CardTitle>
+    <CardTitle className="text-xl font-geist">{title}</CardTitle>
     <CardDescription>{cardContent}</CardDescription>
   </CardHeader>
   <CardContent>
