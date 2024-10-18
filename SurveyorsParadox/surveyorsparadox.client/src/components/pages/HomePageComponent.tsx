@@ -1,16 +1,16 @@
 import { Cards } from '../Card';
 const HomePageComponent: React.FC = () => {
     return (
-        <div className=''>
-            <h1 className='text-center text-3xl font-bold my-10'>Home Page</h1>
-            <div className='flex'>
+        <div className='h-screen'>
+            <h1 className='h-1/6 text-center text-3xl font-bold my-10 font-guton'>OFFICE 2 FIELD</h1>
+           
+            <div className='h-3/6 flex items-center justify-center'>
 
-                <div className='p-10  mx-auto sm:grid lg:grid-cols-3 sm:grid-cols-1 lg:gap-10'>
-                    <Cards title="Form" cardContent={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ratione laboriosam, iusto esse veniam ea corrupti laborum a quis? Distinctio?'} buttonContent="Go to Form" buttonURL={'/form'} />
-                    <Cards title="Calendar" cardContent={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ratione laboriosam, iusto esse veniam ea corrupti laborum a quis? Distinctio?'} buttonContent={'Go to Calendar'} buttonURL={'/calendar'}/>
-                    <Cards title="Reports" cardContent={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ratione laboriosam, iusto esse veniam ea corrupti laborum a quis? Distinctio?'} buttonContent={'Go to Reports'} buttonURL={'/reports'}/>
-                
-                </div>
+                    <div className='p-10 h-4/5 mx-auto sm:grid lg:grid-cols-3 sm:grid-cols-1 lg:gap-10'>
+                        <Cards title="ASSIGN TASK" cardContent={"A work template that can be implemented in the field from the comfort of your office desk"} buttonURL={'/form'} />
+                        <Cards title="CALENDAR" cardContent={'History is important, from the harappan civilization to your layout'} buttonURL={'/calendar'}/>
+                        <Cards title="REPORTS" cardContent={'Here I am, reporting from the field, officer!'} buttonURL={'/reports'}/>   
+                    </div>
             </div>
 
         </div>

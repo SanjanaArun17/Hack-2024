@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './FormComponent.css';
 import TaskForm from '../TaskForm';
 import NavBar from '../NavBar';
+import store from '@/app/store'; 
+import { Provider } from 'react-redux';
 
 interface SurveyTask {
     jobsite: string;
@@ -37,7 +39,9 @@ const FormComponent: React.FC = () => {
     return (
         <>
             <NavBar/>
-            <TaskForm/>
+            <Provider store={store}>
+                <TaskForm/>
+            </Provider>
         </>
     )
 };

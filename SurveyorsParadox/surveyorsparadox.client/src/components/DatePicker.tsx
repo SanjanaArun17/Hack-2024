@@ -2,6 +2,7 @@
 import * as React from "react"
 import { CalendarIcon } from "@radix-ui/react-icons"
 import { format } from "date-fns"
+import {setDate} from "../features/formSlice"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -11,9 +12,12 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { useDispatch } from "react-redux"
 
 export default function DatePicker() {
   const [date, setDate] = React.useState<Date>()
+
+  const dispatch = useDispatch()
 
   return (
     <Popover>

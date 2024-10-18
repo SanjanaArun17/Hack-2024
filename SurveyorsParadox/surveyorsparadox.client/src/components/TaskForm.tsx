@@ -2,20 +2,69 @@ import DropdownMenu from "./DropdownMenu";
 import DatePicker  from "./DatePicker";
 import RadioBtns from "./RadioBtns";
 import { useState } from "react";
+import {useDispatch, useSelector} from "react-redux"
+import {setAssignee, setDescriptionValue, setPointsField, taskDetails } from "../features/formSlice"
 
 export default function TaskForm(){
 
     const [canSend, setCanSend] = useState(true)
     const [includeAllPoints, setAllPoints] = useState(false)
+
+    const [assigneeName, setAssigneeName] = useState("")
+    const [description, setDescription] = useState("")
+    const [points, setPoints] = useState("")
+
+    const dispatch = useDispatch()
     
     const handleSendRequest = () =>{
         setCanSend(!canSend)
+        sendRequest(resObj)
     }
 
     const jobOptions = ["Trimble Information Technology Building"]
     const locationOptions = ["Floor 1", "Floor 2", "Floor 3", "Floor 4", "Floor 5", "Floor 6", "Floor 7"]
     
     const buttonActionText = canSend ? "SEND REQUEST" : "CANCEL REQUEST";
+
+    const setValues = () => {
+        dispatch(setAssignee(assigneeName))
+        dispatch(setPointsField(points))
+        dispatch(setDescriptionValue(description))
+    }
+
+    const sendRequest = async (data : {}) => {
+        setValues()
+        try {
+          const response = await fetch('/Task/posttask', {
+            method: 'POST', 
+            headers: {
+              'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(data),
+          });
+      
+          if (!response.ok) {
+            throw new Error('Failed to send data');
+          }
+      
+          const result = await response.json();
+          console.log(result);
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      };
+
+    const jobSite : string = useSelector((state : taskDetails) => state.jobSite)
+    
+    const resObj = {
+        jobSite : useSelector((state : taskDetails) => state.jobSite),
+        location : useSelector((state : taskDetails) => state.location),
+        assignee : useSelector((state : taskDetails) => state.assignee),
+        task : useSelector((state : taskDetails) => state.assignee),
+        points : useSelector((state : taskDetails) => state.points),
+        date : useSelector((state : taskDetails) => state.date),
+        description : useSelector((state : taskDetails) => state.description)
+    }
 
 
     return(
@@ -26,7 +75,7 @@ export default function TaskForm(){
                         <div>JOB SITE</div>
                     </div>
                     <div className="col-span-7 border border-black text-center p-8 font-medium">
-                        <div><DropdownMenu options={jobOptions}/></div>
+                        <div><DropdownMenu attribute="Job Site" options={jobOptions}/></div>
                     </div>
                 </div>
 
@@ -35,7 +84,7 @@ export default function TaskForm(){
                         <div>LOCATION</div>
                     </div>
                     <div className="col-span-7 border border-black text-center p-8 font-medium">
-                        <div><DropdownMenu options={locationOptions}/></div>
+                        <div><DropdownMenu attribute="Location" options={locationOptions}/></div>
                     </div>
                 </div>
 
@@ -48,7 +97,9 @@ export default function TaskForm(){
                             <input 
                             className=" px-4 py-1 font-guton font-medium rounded-md border-2 border-customBlue"        
                             type="text"
+                            value={assigneeName}
                             placeholder="Enter Assignee Name"
+                            onChange={(e) => setAssigneeName(e.target.value)}
                             />
                         </div>
                     </div>
@@ -71,6 +122,8 @@ export default function TaskForm(){
                         <div className="sm:flex justify-between">
                             <div className="mx-auto">
                                 <input type="text"
+                                value={points}
+                                onChange={(e) => setPoints(e.target.value)}
                                 className=" px-4 py-1 lg:w-80 rounded-md border-2 border-customBlue"
                                 placeholder="Enter Point Name"
                                 />
@@ -106,6 +159,8 @@ export default function TaskForm(){
                             <textarea 
                             className=" w-1/2 h-4/5 px-2 py-1 rounded-md border-2 border-customBlue"
                             placeholder="Enter Description"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
                             />
                         </div>
                     </div>

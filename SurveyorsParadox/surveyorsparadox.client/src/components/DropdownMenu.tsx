@@ -1,39 +1,19 @@
-
 import { useState, useRef, useEffect } from "react"
-
+import { useDispatch } from "react-redux"
+import {setJobSite, setLocation} from "../features/formSlice"
 
 type dropDownProps = {
-	options : string[]
+	options : string[],
+	attribute : string
 }
 
-// const options = [
-//   {
-//     value: "Option 1",
-//     label: "Option 1",
-//   },
-//   {
-//     value: "Option 2",
-//     label: "Option 2",
-//   },
-//   {
-//     value: "Option 3",
-//     label: "Option 3",
-//   },
-//   {
-//     value: "Option 4",
-//     label: "Option 4",
-//   }
-//   , {
-//     value: "Option 5",
-//     label: "Option 5",
-//   }
-// ]
-
-export default function DropdownMenu({options} : dropDownProps) {
+export default function DropdownMenu({options, attribute} : dropDownProps) {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState("Select Option")
   const dropDownRef = useRef<HTMLDivElement | null>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+
+  const dispatch = useDispatch()
 
 	const handleCloseDropDown = (event : MouseEvent ) =>{
 		if(dropDownRef.current && !dropDownRef.current.contains(event.target as Node) && 
@@ -46,6 +26,11 @@ export default function DropdownMenu({options} : dropDownProps) {
 	const selectOption = (option:string)=>{
 		setOpen(!open);
 		setValue(option)
+		if(attribute==="Job Site")
+			dispatch(setJobSite(value))
+		else if(attribute==="Location")
+			dispatch(setLocation(value))
+		
 	}
 
 	useEffect(()=>{
