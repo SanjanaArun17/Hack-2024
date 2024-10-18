@@ -9,9 +9,9 @@ namespace SurveyorsParadox.Server
         private readonly List<ReportIntent> reportIntents = new();
         private readonly AppDbContext appDbContext;
 
-        public TaskService(AppDbContext appDb)
+        public TaskService()
         {
-            this.appDbContext = appDb;
+            //this.appDbContext = appDb;
         }
 
         public IReadOnlyList<Models.TaskIntent> TaskIntents => this.taskIntents;
