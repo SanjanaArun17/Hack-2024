@@ -1,4 +1,6 @@
 import { useState } from "react";
+import {setTask} from "../features/formSlice"
+import { useDispatch } from "react-redux";
 
 const options = [
     "LAYOUT POINTS",
@@ -11,7 +13,9 @@ export default function RadioBtns(){
 
     const [selectedOption, setSelectedOption] = useState<string>("")
     const [activeButton, setActiveButton] = useState<number | null>(null)
-
+    
+    const dispatch = useDispatch()
+    
     const handleChange = (event :React.ChangeEvent<HTMLInputElement>, index : number) =>{
         setSelectedOption(event.target.value)
         if (activeButton === index) {
@@ -20,8 +24,9 @@ export default function RadioBtns(){
             setActiveButton(index);
         }
 
-       
+        dispatch(setTask(selectedOption))
     }
+    
 
     return(
         <>
